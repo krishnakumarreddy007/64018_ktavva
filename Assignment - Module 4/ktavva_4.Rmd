@@ -77,7 +77,7 @@ f.con<- matrix(c(1,1,1,0,0,0,0,0,0,
                  0,1,0,0,1,0,0,1,0,
                  0,0,1,0,0,1,0,0,1), nrow=9, byrow=TRUE)
 
-#Setting the direction of inequalities constraints
+# Setting the direction of inequalities constraints
 f.dir <- c("<=",
            "<=",
            "<=",
@@ -88,13 +88,13 @@ f.dir <- c("<=",
            "<=",
            "<=")
 
-# setting the right hand side coefficients
+# Setting the right hand side coefficients
 f.rhs = c(750,900,450,13000,12000,5000,900,1200,750)
 
-#Finding the value of Objective fUNCTION
+# Finding the value of Objective fUNCTION
 lp("max",f.obj,f.con,f.dir,f.rhs)
 
-#Getting the values of Variables
+# Getting the values of Variables
 lp("max",f.obj,f.con,f.dir,f.rhs)$solution
 ```
 
