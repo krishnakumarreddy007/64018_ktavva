@@ -1,0 +1,78 @@
+---
+title: "Assignment - Module 6"
+author: "Krishna Kumar Tavva"
+date: "2023-10-15"
+output:
+  word_document: default
+  html_document: default
+---
+
+```{r}
+library(lpSolve)
+```
+
+```{r }
+# Formulate and solve the transportation Problem 
+
+# Set up problem matrix
+Prob <- matrix(c(22, 14, 30, 600, 100,
+                 16, 20, 24, 625, 120,
+                 80, 60, 70, "-", "-"), nrow=3, byrow=TRUE)
+
+colnames(Prob)=c("Warehouse 1","Warehouse 2","Warehouse 3","Production Cost","Production Capacity")
+
+rownames(Prob)=c("Plant A","Plant B","Demand")
+
+Prob
+
+# Minimize Z = 22X11 + 14X12 + 30X13 + 16X21 + 20X22 + 24X23
+
+# supply Constraints
+    # X11 + X12 + X13 <= 100
+    # X21 + X22 + X23 <= 120
+
+# Demand Constraints
+    # X11 + X21 >= 80
+    # X12 + X22 >= 60
+    # X13 + X23 >= 70
+
+# Non-negativity of the decision variables
+#                  Xij >= 0 where i=1,2 and j=1,2,3
+
+
+
+# Set up cost matrix
+
+costs = matrix(c(622, 614, 630, 0,
+                 641, 645, 649, 0), nrow=2, byrow= TRUE)
+
+# Production monthly Capacity = 100 + 120 = 220
+# Demand (monthly) = 80 + 60 + 70 = 210
+# Since Production capacity > Demand i.e.unbalanced, we are creating a dummy column of the value 10.
+
+#Set up column names and row names 
+colnames(costs) = c("Warehouse 1","Warehouse 2","Warehouse 3","Dummy")
+rownames(costs) = c("Plant A","Plant 2")
+
+costs
+
+#Setting up constraint signs and right-hand sides
+row.signs <- rep("<=",2)
+row.rhs <- c(100,120)
+col.signs <- rep(">=",4)
+col.rhs <- c(80,60,70,10)
+
+#Run
+lptrans <- lp.transport(costs, "min", row.signs, row.rhs, col.signs, col.rhs)
+
+#Variables for the given Problem
+lptrans$solution
+
+# As per the above chart, to minimize the transportation cost, 80 units should be shipped from Plant B to Warehouse 1, 60 units from Plant A to Warehouse 2, 40 units from Plant A to Warehouse 3, 30 units from Plant B to Warehouse 3, and 10 units from Plant B to Dummy(storage).
+# Min value = (80*641) + (60*614) + (40*630) + (30*649) + (10*0) = 132,790
+
+# Objective function is
+lptrans$objval
+
+```
+
