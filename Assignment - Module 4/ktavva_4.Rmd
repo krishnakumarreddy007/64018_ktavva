@@ -2,13 +2,10 @@
 title: "Assignment - Module 4"
 author: "Krishna Kumar Tavva"
 date: "2023-09-24"
-output: word_document
+output:
+  pdf_document: default
+  word_document: default
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-rm(list = ls())
-```
 
 ## Install lpSolve package to facilitate solving our problem
 

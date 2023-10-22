@@ -3,8 +3,9 @@ title: "Assignment - Module 6"
 author: "Krishna Kumar Tavva"
 date: "2023-10-15"
 output:
-  word_document: default
+  pdf_document: default
   html_document: default
+  word_document: default
 ---
 
 ```{r}

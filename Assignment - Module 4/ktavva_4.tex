@@ -1,0 +1,224 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Assignment - Module 4},
+  pdfauthor={Krishna Kumar Tavva},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment - Module 4}
+\author{Krishna Kumar Tavva}
+\date{2023-09-24}
+
+\begin{document}
+\maketitle
+
+\hypertarget{install-lpsolve-package-to-facilitate-solving-our-problem}{%
+\subsection{Install lpSolve package to facilitate solving our
+problem}\label{install-lpsolve-package-to-facilitate-solving-our-problem}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#install.packages("lpSolve") }
+\FunctionTok{library}\NormalTok{(lpSolve)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'lpSolve' was built under R version 4.2.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Let X1, X2, X3 be the number of large{-}sized units produced at Plants 1, 2, and 3, respectively, per day.}
+\CommentTok{\# Let Y1, Y2, Y3 be the number of medium{-}sized units produced at Plants 1, 2, and 3, respectively, per day.}
+\CommentTok{\# Let Z1, Z2, Z3 be the number of small{-}sized units produced at Plants 1, 2, and 3, respectively, per day.}
+
+\CommentTok{\# Objective Function}
+\CommentTok{\# Maximize Z = 420(X1+X2+X3) + 360(Y1+Y2+Y3) + 300(Z1+Z2+Z3)}
+
+\NormalTok{f.obj}\OtherTok{\textless{}{-}}\FunctionTok{c}\NormalTok{(}\DecValTok{420}\NormalTok{,}\DecValTok{360}\NormalTok{,}\DecValTok{300}\NormalTok{,}\DecValTok{420}\NormalTok{,}\DecValTok{360}\NormalTok{,}\DecValTok{300}\NormalTok{,}\DecValTok{420}\NormalTok{,}\DecValTok{360}\NormalTok{,}\DecValTok{300}\NormalTok{)}
+
+\CommentTok{\# Subject to}
+\CommentTok{\#   X1 + Y1 + Z1 ≤ 750}
+\CommentTok{\#   X2 + Y2 + Z2 ≤ 900}
+\CommentTok{\#   X3 + Y3 + Z3 ≤ 450}
+\CommentTok{\# }
+\CommentTok{\#   20X1 + 15Y1 + 12Z1 ≤ 13000}
+\CommentTok{\#   20X2 + 15Y2 + 12Z2 ≤ 12000}
+\CommentTok{\#   20X3 + 15Y3 + 12Z3 ≤ 5000}
+\CommentTok{\# }
+\CommentTok{\#   X1 + X2 + X3 ≤ 900}
+\CommentTok{\#   Y1 + Y2 + Y3 ≤ 1200}
+\CommentTok{\#   Z1 + Z2 + Z3 ≤ 750}
+\CommentTok{\#   }
+\CommentTok{\# Non Negativity}
+\CommentTok{\#     X1, X2, X3, Y1, Y2, Y3, Z1, Z2, Z3 ≥ 0}
+
+\CommentTok{\# Write down the above constraints using all 9 variables in each equation as follow:}
+\CommentTok{\# X1 + Y1 + Z1 + 0X2 + 0Y2 + 0Z2 + 0X3 + 0Y3 + 0Z3 ≤ 750}
+\CommentTok{\# 0X1 + 0Y1 + 0Z1 + X2 + Y2 + Z2 + 0X3 + 0Y3 + 0Z3 ≤ 900}
+\CommentTok{\# 0X1 + 0Y1 + 0Z1 + 0X2 + 0Y2 + 0Z2 + X3 + Y3 + Z3 ≤ 450}
+\CommentTok{\# 20X1 + 15Y1 + 12Z1 + 0X2 + 0Y2 + 0Z2 + 0X3 + 0Y3 + 0Z3 ≤ 13000}
+\CommentTok{\# 0X1 + 0Y1 + 0Z1 + 20X2 + 15Y2 + 12Z2 + 0X3 + 0Y3 + 0Z3 ≤ 12000}
+\CommentTok{\# 0X1 + 0Y1 + 0Z1 + 0X2 + 0Y2 + 0Z2 + 20X3 + 15Y3 + 12Z3 ≤ 5000}
+\CommentTok{\# X1 + 0Y1 + 0Z1 + X2 + 0Y2 + 0Z2 + X3 + 0Y3 + 0Z3 ≤ 900}
+\CommentTok{\# 0X1 + Y1 + 0Z1 + 0X2 + Y2 + 0Z2 + 0X3 + Y3 + 0Z3 ≤ 1200}
+\CommentTok{\# 0X1 + 0Y1 + Z1 + 0X2 + 0Y2 + Z2 + 0X3 + 0Y3 + Z3 ≤ 750}
+
+\CommentTok{\# The coefficients of the constraints can be written in the matrix form as}
+\CommentTok{\#   1 1 1 0 0 0 0 0 0}
+\CommentTok{\#   0 0 0 1 1 1 0 0 0}
+\CommentTok{\#   0 0 0 0 0 0 1 1 1}
+\CommentTok{\#   20 15 12 0 0 0 0 0 0}
+\CommentTok{\#   0 0 0 20 15 12 0 0 0}
+\CommentTok{\#   0 0 0 0 0 0 20 15 12}
+\CommentTok{\#   1 0 0 1 0 0 1 0 0}
+\CommentTok{\#   0 1 0 0 1 0 0 1 0}
+\CommentTok{\#   0 0 1 0 0 1 0 0 1}
+\CommentTok{\# }
+\CommentTok{\# Formulating the Constraints in the Matrix form : }
+
+\NormalTok{f.con}\OtherTok{\textless{}{-}} \FunctionTok{matrix}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                 \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                 \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{,}
+                 \DecValTok{20}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                 \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{12}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                 \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{20}\NormalTok{,}\DecValTok{15}\NormalTok{,}\DecValTok{12}\NormalTok{,}
+                 \DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                 \DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}
+                 \DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{nrow=}\DecValTok{9}\NormalTok{, }\AttributeTok{byrow=}\ConstantTok{TRUE}\NormalTok{)}
+
+\CommentTok{\# Setting the direction of inequalities constraints}
+\NormalTok{f.dir }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{,}
+           \StringTok{"\textless{}="}\NormalTok{)}
+
+\CommentTok{\# Setting the right hand side coefficients}
+\NormalTok{f.rhs }\OtherTok{=} \FunctionTok{c}\NormalTok{(}\DecValTok{750}\NormalTok{,}\DecValTok{900}\NormalTok{,}\DecValTok{450}\NormalTok{,}\DecValTok{13000}\NormalTok{,}\DecValTok{12000}\NormalTok{,}\DecValTok{5000}\NormalTok{,}\DecValTok{900}\NormalTok{,}\DecValTok{1200}\NormalTok{,}\DecValTok{750}\NormalTok{)}
+
+\CommentTok{\# Finding the value of Objective fUNCTION}
+\FunctionTok{lp}\NormalTok{(}\StringTok{"max"}\NormalTok{,f.obj,f.con,f.dir,f.rhs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Success: the objective function is 708000
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Getting the values of Variables}
+\FunctionTok{lp}\NormalTok{(}\StringTok{"max"}\NormalTok{,f.obj,f.con,f.dir,f.rhs)}\SpecialCharTok{$}\NormalTok{solution}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 350.0000 400.0000   0.0000   0.0000 400.0000 500.0000   0.0000 133.3333
+## [9] 250.0000
+\end{verbatim}
+
+\end{document}
