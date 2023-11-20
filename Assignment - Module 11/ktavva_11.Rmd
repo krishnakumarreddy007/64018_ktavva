@@ -1,0 +1,93 @@
+---
+title: "Assignment - Module 11"
+author: "Krishna Kumar Tavva"
+date: "2023-11-19"
+output: pdf_document
+---
+
+*AP is a shipping service that guarantees overnight delivery of packages in the continental US. The company has various hubs at major cities and airports across the country. Packages are received at hubs, and then shipped to intermediate hubs or to their final destination.*\newline
+
+*The manager of the AP hub in Cleveland is concerned about labor costs, and is interested in determining the most effective way to schedule workers. The hub operates seven days a week, and the number of packages it handles varies from one day to another.*\newline
+
+*Loading the lpSolveAPI Package*
+```{r}
+library("lpSolveAPI")
+```
+
+*Loading the lp file*
+```{r}
+aphub_lp <- read.lp("aphub.lp")
+print(aphub_lp)
+```
+*The table below provides an estimate of the number of workers needed each day of the week.*
+```{r}
+DayWorker_Req <- matrix(c("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",
+18,27,22,26,25,21,19),ncol=2,byrow = F)
+
+colnames(DayWorker_Req) <- c("Day_of_the_week", "Workers_Required")
+
+as.table(DayWorker_Req)
+```
+
+*Package handlers at AP are guaranteed a five-day work week with two consecutive days off. The base wage for the handlers is $750 per week. Workers working on Saturday or Sunday receive an additional $25 per day. The possible shifts and salaries for package handlers are:*
+```{r}
+Day_offs_and_wages <- matrix(c(1,2,3,4,5,6,7,"Sunday and Monday","Monday and Tuesday",
+"Tuesday and Wednesday","Wednesday and Thursday","Thursday and Friday",
+"Friday and Saturday","Saturday and Sunday", "$775","$800","$800","$800","$800","$775","$750"),
+ncol=3,byrow=F)
+
+colnames(Day_offs_and_wages) <- c("Shift", "Days_Off", "Wage")
+
+as.table(Day_offs_and_wages)
+```
+
+*Running the lp model*
+```{r}
+solve(aphub_lp)
+```
+#By getting 0 as the value we get to know that there exists a model.
+
+*What was the total cost?*
+```{r}
+get.objective(aphub_lp)
+```
+#The total cost to the firm thereby ensuring that the total wage expenses are as low as possible and there are sufficient number of workers available each day to work is "$25,675".
+
+*How many workers are available each day to work ?*
+```{r}
+get.variables(aphub_lp)
+# The variables are labeled from X1, X2.......X7 where;
+
+# X1 = Number of workers assigned to shift 1 = 2.
+
+# X2 = Number of workers assigned to shift 2 = 4.
+
+# X3 = Number of workers assigned to shift 3 = 5.
+
+# X4 = Number of workers assigned to shift 4 = 0.
+
+# X5 = Number of workers assigned to shift 5 = 8.
+
+# X6 = Number of workers assigned to shift 6 = 1.
+
+# X7 = Number of workers assigned to shift 7 = 13.
+```
+#By the variable values attained we can thereby get to see how many workers are available to work each day with respect to the objective function as well as the constraints framed by the organization.
+
+```{r}
+get.constraints(aphub_lp)
+# Sunday = X2 + X3 + X4 + X5 + X6 = 18 Workers.
+
+# Monday = X3 + X4 + X5 + X6 + X7 = 27 Workers.
+
+# Tuesday = X4 + X5 + X6 + X7 + X1 = 24 Workers.
+
+# Wednesday = X5 + X6 + X7 + X1 + X2 = 28 Workers.
+
+# Thursday = X6 + X7 + X1 + X2 + X3 = 25 Workers.
+
+# Friday = X7 + X1 + X2 + X3 + X4 = 24 Workers.
+
+# Saturday = X1 + X2 + X3 + X4 + X5 = 19 Workers.
+```
+
